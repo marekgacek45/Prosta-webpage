@@ -2,7 +2,9 @@
 @use 'utilities/components';
 @import 'utilities/mixins';
 
-* {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -186,7 +188,7 @@ a {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	padding: 2em;
+	// padding: 2em;
 
 	&__header {
 		text-align: center;
@@ -208,6 +210,7 @@ a {
 			min-width: 300px;
 			max-width: 400px;
 			border-radius: 6px 20px 6px 20px;
+			padding: 1em;
 			&--right {
 				@include large-devices {
 					order: 1;
@@ -217,6 +220,7 @@ a {
 		&-text {
 			margin-top: 2em;
 			text-align: center;
+			padding: 1em;
 			@include large-devices {
 				margin: 2em;
 			}
@@ -238,7 +242,7 @@ a {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin: 1em .5em;
+		margin: 1em 0.5em;
 		// width: 100%;
 		// padding: 1em;
 		min-width: 140px;
@@ -320,7 +324,8 @@ a {
 				span {
 					font-style: italic;
 				}
-				p , span{
+				p,
+				span {
 					font-size: 1rem;
 					@include small-devices {
 						font-size: 1.6rem;
@@ -331,65 +336,141 @@ a {
 	}
 }
 
-
-	.footer {
-		background-color: colors.$secondary-color;
-		padding: 2em;
-
-		&__content {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-evenly;
-			align-items: center;
+.gallery {
+		width: 100%;
+		height: 50vh;
+		@include small-devices {
+			height: 70vh;
 		}
-		&__info {
+		@include large-devices {
+			height: calc(100vh - 70px);
+		}
+	&__content{
+width: 100%;
+height: 100%;
+	}
+}
+
+.carousel {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+.slide {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	transition: 200ms opacity ease-in-out;
+	transition-delay: 200ms;
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+.carousel-btn{
+	position: absolute;
+	background: none;
+	border: none;
+	font-size: 4rem;
+	top: 50%;
+	z-index: 2;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color: rgba(255,255,255, .1);
+	padding: 0 .5em;
+	background-color: rgba(0,0,0, .1);
+
+	&:hover,&:focus{
+color: white;
+background-color: rgba(0,0,0,.2);
+	}
+
+	&:focus{
+		outline: 1px solid black
+	}
+
+}
+
+.prev{
+	left: 1rem;
+}
+.next{
+	right: 1rem;
+}
+
+.slide[data-active] {
+	opacity: 1;
+	z-index: 1;
+	transition-delay: 0ms;
+}
+
+.footer {
+	background-color: colors.$secondary-color;
+	padding: 2em;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 1em;
+		&-box {
 			display: flex;
-			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			margin-bottom: 1em;
-			&-box {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-bottom: 1em;
-			}
-			&-img {
-				width: 50px;
-				&--title {
-					width: 120px;
-				}
-			}
 		}
-		&__social {
-			margin-bottom: 1em;
-			&-img {
-				width: 52px;
-				border-radius: 12px;
-				transition: transform 0.6s;
-				cursor: pointer;
-				padding: 0.5em;
-				&:hover {
-					transform: scale(1.2);
-				}
-			}
-		}
-		&__hr {
-			border: 1px solid colors.$secondary-font-color;
-		}
-		&__bottom-text {
-			font-family: 'Amatic SC', cursive;
-			font-weight: bold;
-			font-size: 3rem;
-			text-align: center;
-			margin-top: 1em;
-		}
-		&__author {
-			text-align: center;
-			margin-top: 1rem;
-			&-img {
-				width: 30px;
+		&-img {
+			width: 50px;
+			&--title {
+				width: 120px;
 			}
 		}
 	}
-
+	&__social {
+		margin-bottom: 1em;
+		&-img {
+			width: 52px;
+			border-radius: 12px;
+			transition: transform 0.6s;
+			cursor: pointer;
+			padding: 0.5em;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
+	&__hr {
+		border: 1px solid colors.$secondary-font-color;
+	}
+	&__bottom-text {
+		font-family: 'Amatic SC', cursive;
+		font-weight: bold;
+		font-size: 3rem;
+		text-align: center;
+		margin-top: 1em;
+	}
+	&__author {
+		text-align: center;
+		margin-top: 1rem;
+		&-img {
+			width: 30px;
+		}
+	}
+}
