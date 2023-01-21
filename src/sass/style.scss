@@ -414,6 +414,16 @@ background-color: rgba(0,0,0,.2);
 	transition-delay: 0ms;
 }
 
+
+.contact{
+	&__map{
+		width: 200px;
+		height: 300px;
+	}
+}
+
+
+
 .footer {
 	background-color: colors.$secondary-color;
 	padding: 2em;
