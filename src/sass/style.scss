@@ -28,6 +28,7 @@ a {
 	left: 0;
 	right: 0;
 	background-color: colors.$secondary-color;
+	z-index: 10000000;
 
 	&__container {
 		display: flex;
@@ -223,8 +224,91 @@ a {
 	}
 }
 
+.menu {
+	&__content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 100%;
+		
 
+	}
+	&__card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 2em 0 ;
+		width: 100%;
+		padding: 1em;
+		
+		@include sm-devices {
+			min-width: 280px;
+			max-width: 45%;
+		}
+		@include large-devices {
+			width: 20%;
+			padding: 0;
+		}
+		&-heading{
+			@include large-devices {
+				display: none;
+			}
+		}
+		&-box {
+			position: relative;
+			// margin: 1em;
+			height: 70px;
+			width: 100%;
+			text-align: center;
+			background-position: center;
+			background-size: cover;
+			border-radius: 6px 20px 6px 20px;
+			overflow: hidden;
+			transition: 0.6s;
+			@include small-devices {
+				width: 80%;
+			}
+			@include large-devices {
+				height: 250px;
+			}
+			
+			&--one {
+				background-image: url('../img/menu.jpg');
+			}
+			&:hover .menu__card-box-text {
+				clip-path: circle(140% at 100% 0%);
+			}
+			&:hover {
+				height: 250px;
+			}
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				padding: 1em;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba(0, 0, 0, 0.85);
+				color: white;
+				clip-path: circle(0% at 90% 10%);
+				transition: all 0.6s;
 
+				h2{
+					font-size: 1.6rem;
+				}
+				span{
+					font-style: italic;
+				}
+			}
+		}
+	}
+}
 
 .footer {
 	background-color: colors.$secondary-color;
