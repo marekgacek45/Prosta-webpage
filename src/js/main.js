@@ -15,6 +15,10 @@ const footerYear = () => {
 }
 
 
+
+
+
+
 hamburgerBtn.addEventListener('click',hamburgerHandler)
 
 footerYear()
