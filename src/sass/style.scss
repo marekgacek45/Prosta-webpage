@@ -128,7 +128,7 @@ a {
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 4.4em;
-	height: 80vh;
+	height: calc(100vh - 70px);
 	background-image: url('../img/header.jpg');
 	background-size: cover;
 	background-position: center;
@@ -138,9 +138,10 @@ a {
 	&__content {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-around;
 		align-items: center;
 		height: 100%;
+
 		&-logo {
 			display: flex;
 			flex-direction: column;
@@ -163,12 +164,10 @@ a {
 			color: colors.$secondary-color;
 			font-family: 'Amatic SC', cursive;
 			font-size: 4rem;
-			padding: 1em;
 			text-align: center;
 			
 		}
 		&-button {
-			margin-top: 8em;
 			border: none;
 			background-color: colors.$third-color;
 			color: colors.$fourth-font-color;
