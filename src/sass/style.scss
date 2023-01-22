@@ -184,6 +184,7 @@ a {
 }
 
 .section {
+	padding-top:70px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -483,4 +484,10 @@ background-color: rgba(0,0,0,.2);
 			width: 30px;
 		}
 	}
+}
+
+
+.active{
+	color: colors.$secondary-font-color;
+	font-weight: bold;
 }
