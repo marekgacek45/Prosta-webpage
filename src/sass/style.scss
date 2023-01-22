@@ -17,6 +17,8 @@ html {
 body {
 	font-family: 'Inter', sans-serif;
 	font-size: 1.6rem;
+	background-color: colors.$primary-color;
+	color: colors.$primary-font-color;
 }
 
 a {
@@ -30,6 +32,8 @@ a {
 	left: 0;
 	right: 0;
 	background-color: colors.$secondary-color;
+	font-family: 'Kite One', sans-serif;
+	color: colors.$secondary-font-color;
 	z-index: 10000000;
 
 	&__container {
@@ -90,7 +94,8 @@ a {
 			position: relative;
 			padding: 0.3em 0;
 			margin-right: 2em;
-			color: colors.$primary-font-color;
+			color: colors.$secondary-font-color;
+			font-weight: bold;
 			text-transform: uppercase;
 			cursor: pointer;
 
@@ -167,15 +172,16 @@ a {
 		}
 		&-heading {
 			color: colors.$secondary-color;
-			font-family: 'Amatic SC', cursive;
+			// font-family: 'Amatic SC', cursive;
+			font-family: 'Kite One', sans-serif;
 			font-size: 4rem;
 			text-align: center;
 			padding: 0 1em;
 		}
 		&-button {
 			border: none;
-			background-color: colors.$third-color;
-			color: colors.$fourth-font-color;
+			background-color: colors.$primary-color;
+			color: colors.$primary-font-color;
 			padding: 1em 2em;
 			border-radius: 8px;
 			cursor: pointer;
@@ -195,7 +201,8 @@ a {
 
 	&__header {
 		text-align: center;
-		font-family: 'Amatic SC', cursive;
+		// font-family: 'Amatic SC', cursive;
+		font-family: 'Kite One', sans-serif;
 		font-size: 6rem;
 	}
 
@@ -430,6 +437,7 @@ background-color: rgba(0,0,0,.2);
 .footer {
 	background-color: colors.$secondary-color;
 	padding: 2em;
+	color: black;
 
 	&__content {
 		display: flex;
@@ -495,8 +503,7 @@ background-color: rgba(0,0,0,.2);
 
 
 .active{
-	color: colors.$secondary-font-color;
-	font-weight: bold;
+	transform: scale(1.3);
 }
 
 // .reveal{
