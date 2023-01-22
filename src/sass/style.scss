@@ -144,12 +144,14 @@ a {
 		justify-content: space-around;
 		align-items: center;
 		height: 100%;
+		animation: opacity 3s ease-in;
 
 		&-logo {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			
 			&-img {
 				width: 35%;
 				@include small-devices {
@@ -487,7 +489,73 @@ background-color: rgba(0,0,0,.2);
 }
 
 
+
+
+
+
+
 .active{
 	color: colors.$secondary-font-color;
 	font-weight: bold;
 }
+
+// .reveal{
+// 	transform: translateX(-250px);
+// 	opacity: 0;
+// 	transition: 2s all ease;
+// }
+
+
+@keyframes fade-left {
+	0% {
+	  transform: translateX(-100px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+  }
+
+  @keyframes fade-right {
+	0% {
+	  transform: translateX(100px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+  }
+  @keyframes opacity {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+
+.reveal{
+	opacity: 0;
+}
+.reveal.test{
+	opacity:1
+}
+
+.test.fade-left{
+	animation: fade-left 1s ease-in
+}
+
+.test.fade-right{
+	animation: fade-right 1s ease-in
+}
+.test.opacity{
+	animation: opacity 1s ease-in
+}
+
+
+// .test{
+// 	transform: translateY(0);
+//   opacity: 1;
+// }
