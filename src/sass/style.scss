@@ -1,5 +1,5 @@
 @use 'utilities/colors';
-@use 'utilities/components';
+@use 'utilities/helpers';
 @import 'utilities/mixins';
 
 *,
@@ -25,171 +25,77 @@ a {
 	text-decoration: none;
 }
 
+
 //NAVIGATION
-.nav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	background-color: colors.$secondary-color;
-	font-family: 'Kite One', sans-serif;
-	color: colors.$secondary-font-color;
-	z-index: 10000000;
+@import './layout/navigation.scss';
+//HEADER
 
-	&__container {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0.5em 2em;
-		@include large-devices {
-			padding: 0.5em 2em;
-		}
-	}
 
-	&__header {
-		display: flex;
-		justify-content: center;
-		align-items: center;
 
-		&-img {
-			width: 50px;
-			cursor: pointer;
-			&--title {
-				width: 120px;
-			}
-		}
-	}
-
-	&__list {
-		display: none;
-		@include large-devices {
-			display: flex;
-		}
-
-		&-mobile {
-			position: fixed;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			align-items: center;
-			top: 70px;
-			left: 0;
-			padding: 8em 0 12em 0;
-			width: 100%;
-			height: calc(100vh - 70px);
-			background-color: colors.$primary-color;
-			transform: translateX(100%);
-			transition: 0.6s;
-			z-index: 10000;
-
-			&--active {
-				transform: translateX(0%);
-			}
-			@include large-devices {
-				display: none;
-			}
-		}
-
-		&-item {
-			position: relative;
-			padding: 0.3em 0;
-			margin-right: 2em;
-			color: colors.$secondary-font-color;
-			font-weight: bold;
-			text-transform: uppercase;
-			cursor: pointer;
-
-			&:before,
-			&:after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				width: 0;
-				border-bottom: 3px solid colors.$secondary-font-color;
-				transition: all 0.3s;
-			}
-
-			&:before {
-				right: 50%;
-			}
-			&:after {
-				left: 50%;
-			}
-
-			&:hover:before,
-			&:hover:after {
-				width: 50%;
-			}
-
-			&-mobile {
-				font-size: 2rem;
-				margin-right: 0;
-			}
-		}
-	}
-}
 
 //HEADER
-.header {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 4.4em;
-	height: calc(100vh - 70px);
-	background-image: url('../img/header.jpg');
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	z-index: 0;
+@import './pages/header.scss';
+@import './components/button';
+// .header {
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	margin-top: 4.4em;
+// 	height: calc(100vh - 70px);
+// 	background-image: url('../img/header.jpg');
+// 	background-size: cover;
+// 	background-position: center;
+// 	background-attachment: fixed;
+// 	z-index: 0;
 
-	&__content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
-		height: 100%;
-		animation: opacity 3s ease-in;
+// 	&__content {
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: space-around;
+// 		align-items: center;
+// 		height: 100%;
+// 		animation: opacity 3s ease-in;
 
-		&-logo {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+// 		&-logo {
+// 			display: flex;
+// 			flex-direction: column;
+// 			justify-content: center;
+// 			align-items: center;
 			
-			&-img {
-				width: 35%;
-				@include small-devices {
-					width: 30%;
-				}
-				&--title {
-					width: 70%;
-					@include small-devices {
-						width: 60%;
-					}
-				}
-			}
-		}
-		&-heading {
-			color: colors.$secondary-color;
-			// font-family: 'Amatic SC', cursive;
-			font-family: 'Kite One', sans-serif;
-			font-size: 4rem;
-			text-align: center;
-			padding: 0 1em;
-		}
-		&-button {
-			border: none;
-			background-color: colors.$primary-color;
-			color: colors.$primary-font-color;
-			padding: 1em 2em;
-			border-radius: 8px;
-			cursor: pointer;
-			text-transform: uppercase;
-			font-weight: bold;
-		}
-	}
-}
+// 			&-img {
+// 				width: 35%;
+// 				@include small-devices {
+// 					width: 30%;
+// 				}
+// 				&--title {
+// 					width: 70%;
+// 					@include small-devices {
+// 						width: 60%;
+// 					}
+// 				}
+// 			}
+// 		}
+// 		&-heading {
+// 			color: colors.$secondary-color;
+// 			// font-family: 'Amatic SC', cursive;
+// 			font-family: 'Kite One', sans-serif;
+// 			font-size: 4rem;
+// 			text-align: center;
+// 			padding: 0 1em;
+// 		}
+// 		&-button {
+// 			border: none;
+// 			background-color: colors.$primary-color;
+// 			color: colors.$primary-font-color;
+// 			padding: 1em 2em;
+// 			border-radius: 8px;
+// 			cursor: pointer;
+// 			text-transform: uppercase;
+// 			font-weight: bold;
+// 		}
+// 	}
+// }
 
 .section {
 	padding-top:70px;
