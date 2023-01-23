@@ -339,68 +339,69 @@ background-color: rgba(0,0,0,.2);
 }
 
 
+//FOOTER
+@import'./layout/footer.scss';
+// .footer {
+// 	background-color: colors.$secondary-color;
+// 	padding: 2em;
+// 	color: black;
 
-.footer {
-	background-color: colors.$secondary-color;
-	padding: 2em;
-	color: black;
-
-	&__content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: center;
-	}
-	&__info {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		margin-bottom: 1em;
-		&-box {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-bottom: 1em;
-		}
-		&-img {
-			width: 50px;
-			&--title {
-				width: 120px;
-			}
-		}
-	}
-	&__social {
-		margin-bottom: 1em;
-		&-img {
-			width: 52px;
-			border-radius: 12px;
-			transition: transform 0.6s;
-			cursor: pointer;
-			padding: 0.5em;
-			&:hover {
-				transform: scale(1.2);
-			}
-		}
-	}
-	&__hr {
-		border: 1px solid colors.$secondary-font-color;
-	}
-	&__bottom-text {
-		font-family: 'Amatic SC', cursive;
-		font-weight: bold;
-		font-size: 3rem;
-		text-align: center;
-		margin-top: 1em;
-	}
-	&__author {
-		text-align: center;
-		margin-top: 1rem;
-		&-img {
-			width: 30px;
-		}
-	}
-}
+// 	&__content {
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: space-evenly;
+// 		align-items: center;
+// 	}
+// 	&__info {
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: center;
+// 		align-items: center;
+// 		margin-bottom: 1em;
+// 		&-box {
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items: center;
+// 			margin-bottom: 1em;
+// 		}
+// 		&-img {
+// 			width: 50px;
+// 			&--title {
+// 				width: 120px;
+// 			}
+// 		}
+// 	}
+// 	&__social {
+// 		margin-bottom: 1em;
+// 		&-img {
+// 			width: 52px;
+// 			border-radius: 12px;
+// 			transition: transform 0.6s;
+// 			cursor: pointer;
+// 			padding: 0.5em;
+// 			&:hover {
+// 				transform: scale(1.2);
+// 			}
+// 		}
+// 	}
+// 	&__hr {
+// 		border: 1px solid colors.$secondary-font-color;
+// 	}
+// 	&__bottom-text {
+// 		font-family: 'Amatic SC', cursive;
+// 		font-weight: bold;
+// 		font-size: 3rem;
+// 		text-align: center;
+// 		margin-top: 1em;
+// 	}
+// 	&__author {
+// 		text-align: center;
+// 		margin-top: 1rem;
+// 		&-img {
+// 			width: 30px;
+// 		}
+// 	}
+// }
 
 
 
