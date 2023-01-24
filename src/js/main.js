@@ -78,9 +78,9 @@ const reveal =() =>{
 		const elementVisible = 150;
 	
 		if (elementTop < windowHeight - elementVisible) {
-			reveals[i].classList.add("test");
+			reveals[i].classList.add("show");
 		} else {
-			reveals[i].classList.remove("test");
+			reveals[i].classList.remove("show");
 		}
 	}
 }

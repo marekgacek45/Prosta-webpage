@@ -1,5 +1,6 @@
 @use'../utilities/colors';
 @import'../utilities/mixins';
+@import'../utilities/animations';
 
 
 .header {
@@ -7,8 +8,8 @@
 	flex-direction: column;
 	margin-top: 3em;
     height: 100vh;
-	// background-image: url('../img/header.jpg');
-	background-image: url('/src/img/header.jpg');
+	background-image: url('../img/header.jpg');
+	// background-image: url('/src/img/header.jpg');
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
