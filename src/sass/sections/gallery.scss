@@ -3,7 +3,6 @@
 .gallery {
     width: 100%;
     height: 70vh;
-    padding: 0;
     @include small-devices {
         height: 70vh;
     }

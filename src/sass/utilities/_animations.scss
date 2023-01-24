@@ -29,7 +29,8 @@
 }
 
 @keyframes clip-path {
-    from{clip-path: circle(3.9% at 49% 49%);}
+    from{clip-path: circle(3.9% at 49% 49%);
+	}
     to{clip-path: circle(70% at 49% 49%);}
 }
 
