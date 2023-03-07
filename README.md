@@ -37,7 +37,7 @@ In this project I used:
 
 
 ## Live
-https://gacmen45.github.io/Prosta-webpage/
+https://marekgacek45.github.io/Prosta-webpage/
 </div>
 
 
